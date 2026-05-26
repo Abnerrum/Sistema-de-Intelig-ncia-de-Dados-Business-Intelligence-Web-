@@ -1,0 +1,6 @@
+flask
+flask-mysql
+pandas
+plotly
+openpyxl
+mysql-connector-python
