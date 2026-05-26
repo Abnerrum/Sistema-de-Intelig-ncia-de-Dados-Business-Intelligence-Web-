@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-3"><div class="card p-3 bg-primary text-white shadow"><h5>Total</h5><h3>{{ total_vendas }}</h3></div></div>
+    <div class="col-md-3"><div class="card p-3 bg-success text-white shadow"><h5>Registros</h5><h3>{{ qtd_registros }}</h3></div></div>
+    <div class="col-md-3"><div class="card p-3 bg-warning text-dark shadow"><h5>Média</h5><h3>{{ media }}</h3></div></div>
+    <div class="col-md-3"><div class="card p-3 bg-danger text-white shadow"><h5>Top Item</h5><h3>{{ top_prod }}</h3></div></div>
+</div>
+
+<div class="card p-3 mb-4 shadow">
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="d-flex gap-2">
+        <input type="file" name="file" class="form-control" accept=".xlsx" required>
+        <button type="submit" class="btn btn-dark">Importar Excel</button>
+    </form>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-8"><div class="card p-2 shadow"><div id="vendas_chart"></div></div></div>
+    <div class="col-md-4"><div class="card p-2 shadow"><div id="pizza_chart"></div></div></div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    var v_data = {{ graph_json | safe if graph_json else '[]' }};
+    if(v_data) Plotly.newPlot('vendas_chart', v_data.data, v_data.layout);
+    
+    var p_data = {{ pizza_json | safe if pizza_json else '[]' }};
+    if(p_data) Plotly.newPlot('pizza_chart', p_data.data, p_data.layout);
+</script>
+{% endblock %}
