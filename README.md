@@ -1,198 +1,76 @@
-# 💡 Sistema de Inteligência de Dados (Business Intelligence Web)
+# Sistema de Inteligência de Dados — BI Web
 
-## 📌 Sobre o Projeto
+Aplicação web que transforma planilhas Excel em dados organizados, indicadores e dashboards para apoiar a tomada de decisão em pequenas e médias empresas.
 
-Este projeto foi desenvolvido com o objetivo de transformar planilhas Excel comuns em um sistema moderno de Business Intelligence (BI) Web, permitindo análise estratégica de dados de forma automatizada, visual e acessível.
+## Problema abordado
 
-A aplicação funciona como uma solução de transformação digital para pequenas e médias empresas que ainda utilizam planilhas isoladas para controle de vendas, estoque ou fluxo financeiro.
+Muitas empresas mantêm controles importantes em planilhas isoladas. Isso dificulta a padronização, a análise histórica e o acompanhamento dos principais indicadores. O projeto centraliza esse fluxo em uma aplicação web baseada em ETL.
 
-O sistema realiza automaticamente o processo de ETL (*Extract, Transform, Load*):
-
-* Extração de dados de arquivos Excel
-* Transformação e limpeza dos dados com Python
-* Armazenamento em banco de dados MySQL
-* Visualização de dashboards e KPIs em tempo real
-
----
-
-# 🎯 Problema Resolvido
-
-Muitas empresas enfrentam dificuldades ao trabalhar apenas com planilhas Excel:
-
-* Falta de colaboração entre usuários
-* Dificuldade para gerar análises estratégicas
-* Risco de perda ou corrupção de arquivos
-* Lentidão com grandes volumes de dados
-* Falta de dashboards modernos para tomada de decisão
-
-Este sistema resolve esses problemas centralizando os dados em uma plataforma web inteligente.
-
----
-
-# 🚀 Funcionalidades
-
-✅ Upload de planilhas Excel
-✅ Processamento automático de dados
-✅ Dashboard interativo
-✅ Gráficos dinâmicos com Plotly
-✅ Filtros por dia, mês e ano
-✅ Sistema de login e autenticação
-✅ Exportação de relatórios Excel
-✅ KPIs estratégicos
-✅ Interface responsiva
-✅ Dark Mode moderno
-
----
-
-# 📊 KPIs Estratégicos
-
-O sistema gera automaticamente indicadores importantes para análise de negócios:
-
-* 💰 Volume Financeiro
-* 🛒 Quantidade de Vendas
-* 📈 Ticket Médio
-* 🏆 Produto Mais Vendido
-* 📊 Curva de Vendas
-* 📦 Distribuição por Produto
-
----
-
-# 🛠️ Tecnologias Utilizadas
-
-## 🐍 Backend
-
-* Python 3.x
-* Flask
-* Jinja2
-
-## 📊 Manipulação de Dados
-
-* Pandas
-* OpenPyXL
-* Plotly
-
-## 🗄️ Banco de Dados
-
-* MySQL
-* mysql-connector-python
-
-## 🎨 Frontend
-
-* HTML5
-* CSS3
-* Bootstrap 5
-* FontAwesome
-
-## ⚙️ Ferramentas
-
-* Pip
-* Virtualenv (venv)
-* XAMPP
-* MySQL Workbench
-
----
-
-# 🧠 Arquitetura do Sistema
-
-```bash
-Excel → Pandas → ETL → MySQL → Flask → Dashboard Web
+```text
+Excel → Pandas → ETL → MySQL → Flask → Dashboard
 ```
 
----
+## Funcionalidades
 
-# 📂 Estrutura do Projeto
+- Upload e processamento de planilhas Excel;
+- Limpeza e transformação dos dados;
+- Armazenamento em MySQL;
+- Dashboard com gráficos e KPIs;
+- Filtros por período;
+- Autenticação de usuários;
+- Exportação de relatórios;
+- Interface responsiva e modo escuro.
+
+## Indicadores
+
+- Volume financeiro;
+- Quantidade de vendas;
+- Ticket médio;
+- Produto mais vendido;
+- Evolução das vendas;
+- Distribuição por produto.
+
+## Tecnologias
+
+- **Backend:** Python, Flask e Jinja2;
+- **Dados:** Pandas, OpenPyXL e Plotly;
+- **Banco:** MySQL;
+- **Frontend:** HTML5, CSS3, Bootstrap 5 e Font Awesome.
+
+## Como executar
 
 ```bash
-📦 projeto-bi-web
- ┣ 📂 uploads
- ┣ 📂 templates
- ┣ 📂 static
- ┣ 📜 app.py
- ┣ 📜 database.py
- ┣ 📜 requirements.txt
- ┗ 📜 README.md
+git clone https://github.com/Abnerrum/Sistema-de-Intelig-ncia-de-Dados-Business-Intelligence-Web-.git
+cd Sistema-de-Intelig-ncia-de-Dados-Business-Intelligence-Web-
+python -m venv .venv
 ```
 
----
+No Windows:
 
-# ⚡ Como Executar o Projeto
-
-## 1️⃣ Clone o repositório
-
-```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-```
-
-## 2️⃣ Crie o ambiente virtual
-
-```bash
-python -m venv venv
-```
-
-## 3️⃣ Ative o ambiente virtual
-
-### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### Linux/Mac
-
-```bash
-source venv/bin/activate
-```
-
-## 4️⃣ Instale as dependências
-
-```bash
+```powershell
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-```
-
-## 5️⃣ Execute o projeto
-
-```bash
 python app.py
 ```
 
----
+No Linux ou macOS:
 
-# 📈 Casos de Uso
+```bash
+source .venv/bin/activate
+pip install -r requirements.txt
+python app.py
+```
 
-## 🛒 Varejo e E-commerce
+Configure a conexão com o MySQL conforme as variáveis esperadas pela aplicação antes de iniciar o servidor.
 
-Acompanhamento de vendas e metas.
+## O que o projeto demonstra
 
-## 📦 Gestão de Estoque
+- Construção de pipelines ETL;
+- Tratamento de dados com Python;
+- Integração entre backend, banco de dados e frontend;
+- Criação de dashboards e indicadores empresariais;
+- Organização de uma aplicação Flask.
 
-Controle de entrada e saída de produtos.
+## Autor
 
-## 💰 Finanças
-
-Análise de fluxo de caixa e despesas.
-
-## 📊 Business Intelligence
-
-Tomada de decisão baseada em dados.
-
----
-
-# 🧠 O Que Este Projeto Demonstra
-
-Este projeto demonstra conhecimentos em:
-
-* Engenharia de Dados
-* ETL (Extract, Transform, Load)
-* Desenvolvimento Web Fullstack
-* Business Intelligence (BI)
-* Banco de Dados SQL
-* Dashboards Interativos
-* Arquitetura de Software
-* Manipulação de Dados com Python
-* Integração Backend + Frontend
-
----
-
-# 🌟 Objetivo do Projeto
-
-Transformar dados brutos em informações estratégicas, ajudando empresas a tomarem decisões mais rápidas, inteligentes e orientadas por dados.
+Desenvolvido por [Abner Luiz](https://github.com/Abnerrum).
